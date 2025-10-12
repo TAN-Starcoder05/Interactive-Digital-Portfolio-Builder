@@ -1,0 +1,76 @@
+<!--
+  Front End Developer: Tanishka Soni 
+  Project:Interactive Digital Portfolio
+  Design Approach:
+  - Clean and user-friendly interface
+  - Mobile-responsive design
+  - Modular separation of HTML, CSS, and JS files
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Builder</title>
+  <link rel="stylesheet" href="portfolio_website_ts.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyPortfolio<span class="accent">Builder</span></div>
+    <nav>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('builder')">Create</button>
+      <button onclick="showPage('preview')">Preview</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <h1>Build Your Own Interactive Portfolio</h1>
+        <p>A clean, dynamic, Kaggle-inspired interface to showcase your skills.</p>
+        <button class="primary-btn" onclick="showPage('builder')">Start Building</button>
+      </div>
+    </section>
+
+    <!-- Builder Section -->
+    <section id="builder" class="page">
+      <div class="builder-container">
+        <form id="portfolioForm">
+          <h2>Enter Your Details</h2>
+          <label>Name</label>
+          <input type="text" id="name" placeholder="Your name" />
+
+          <label>Tagline</label>
+          <input type="text" id="tagline" placeholder="Short tagline" />
+
+          <label>About</label>
+          <textarea id="about" placeholder="A short bio"></textarea>
+
+          <label>Skills (comma separated)</label>
+          <input type="text" id="skills" placeholder="HTML, CSS, JS..." />
+
+          <label>Projects (Format: Title|Description|Link, each on new line)</label>
+          <textarea id="projects" placeholder="Project1|A cool project|https://..."></textarea>
+
+          <label>Contact Email</label>
+          <input type="email" id="email" placeholder="you@example.com" />
+
+          <button type="button" class="primary-btn" onclick="generatePortfolio()">Generate Portfolio</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section id="preview" class="page">
+      <div id="portfolioPreview" class="portfolio-preview"></div>
+      <button class="secondary-btn" onclick="showPage('builder')">Edit Info</button>
+    </section>
+  </main>
+
+  <script src="portfolio_website_ts.js"></script>
+</body>
+</html>
